@@ -1,12 +1,13 @@
 import React from 'react';
-import TodoCreator from './containers/TodoCreator';
+import TodoCreator from '../../components/TodoCreator';
+import TodoList from '../../components/TodoList';
 
 export default function TodoApp() {
     return (
         <>
-            <TodoCreator mode='dark' />
-            <main>TodoList</main>
-            <footer>TodoFilter</footer>
+            <TodoCreator />
+            <TodoList />
+            <footer style={{ textAlign: "center", backgroundColor: "#2D3340", color: "#FFF", height: "50px"}}>TodoFilter</footer>
         </>
     );
 }

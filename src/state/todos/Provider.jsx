@@ -3,7 +3,7 @@ import TodosContext from './Context';
 import todosReducer from './reducer';
 
 export default function Provider({ children }) {
-    const [todos, dispatchToTodos] = useReducer(todosReducer, 'all');
+    const [todos, dispatchToTodos] = useReducer(todosReducer, []);
     return (
         <TodosContext.Provider value={{ todos, dispatchToTodos }}>
             {children}

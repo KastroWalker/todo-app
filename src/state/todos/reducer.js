@@ -12,7 +12,7 @@ export default function reducer(state, action) {
                 completed: false
             });
         case todosTypes.TOGGLE_TODO_STATUS:
-            return state.map(todo => {
+            return state.map((todo) => {
                 if (todo.id === action.payload.id) {
                     return {
                         ...todo,
@@ -23,18 +23,18 @@ export default function reducer(state, action) {
                 }
             });
         case todosTypes.TOGGLE_TODO_TITLE:
-            return state.map(todo => {
+            return state.map((todo) => {
                 if (todo.id === action.payload.id) {
                     return {
                         ...todo,
-                        completed: action.payload.title
+                        title: action.payload.title
                     }
                 } else {
                     return todo;
                 }
             });
         case todosTypes.REMOVE_TODO:
-            return state.filter(todo => {
+            return state.filter((todo) => {
                 return todo.id !== action.payload.id;
             });
         default:
