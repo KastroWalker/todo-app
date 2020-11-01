@@ -5,7 +5,8 @@ const TodoItemStyle = styled.li `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    margin: 35px auto;
+    width: 80%;
     padding: 10px;
     border: 3px solid #FFF;
     border-radius: 15px;
@@ -34,7 +35,7 @@ const TodoItemStyle = styled.li `
         outline: none;
 
         :checked {
-            background-color: #CCC;
+            background-color: #999;
             box-shadow: inset 0px 0px 4px 2px #AAA;
             
             ::before {
@@ -54,6 +55,21 @@ const TodoItemStyle = styled.li `
             box-shadow: inset 0px 0px 4px 2px #777;
             transform: scale(1.1);
             transition: all 400ms;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        .title {
+            width: 60%;
+        }
+    }
+
+    @media only screen and (max-width: 360px) {
+        &{
+            flex-direction: column;
+        }
+        .title {
+            width: 100%;
         }
     }
 `;

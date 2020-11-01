@@ -1,8 +1,8 @@
 import * as filterTypes from './types';
 
-export default function toogleFilter(filter) {
+export function toogleFilter(filter) {
     return {
-        types: filterTypes.TOOGLE_FILTER,
+        type: filterTypes.TOOGLE_FILTER,
         payload: {
             filter: filter
         }

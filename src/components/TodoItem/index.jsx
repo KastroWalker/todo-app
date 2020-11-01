@@ -1,6 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { MdCreate, MdDelete } from 'react-icons/md';
 import TodoItemStyle from './style';
-import { MdDelete, MdCreate } from 'react-icons/md';
 
 export default function TodoItem({ id, title, completed, handleDelete, handleStatus, showModal }) {
     const [isChecked, setIsChecked] = useState(completed);
@@ -15,13 +15,13 @@ export default function TodoItem({ id, title, completed, handleDelete, handleSta
 
     return (
         <TodoItemStyle status={completed}>
-            <span>{title}</span>
+            <span className='title'>{title}</span>
 
             <div className='btn-actions'>
                 <button onClick={showModal} className="btn-edit"><MdCreate /></button>
                 <input
                     type="checkbox"
-                    value={isChecked}
+                    checked={isChecked}
                     onChange={handleCheck}
                     className="status"
                 />
